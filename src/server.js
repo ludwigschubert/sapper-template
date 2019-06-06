@@ -7,7 +7,8 @@ const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
 polka() // You can also use Express
-	.use(
+    .use(
+        "nested/basepath",
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()
